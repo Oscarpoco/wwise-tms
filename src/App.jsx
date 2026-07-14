@@ -11,6 +11,7 @@ import ProjectList from './components/projects/ProjectList';
 import Reports from './components/reports/Reports';
 import UserManagement from './components/users/UserManagement';
 import LoadingSpinner from './components/common/LoadingSpinner';
+import { useState } from 'react';
 
 function PublicRoute({ children }) {
   const { user, userProfile, loading } = useAuth();
@@ -20,6 +21,8 @@ function PublicRoute({ children }) {
 }
 
 export default function App() {
+  const [oscar, setOscar] = useState("OSCAR")
+  
   return (
     <BrowserRouter>
       <AuthProvider>
@@ -68,3 +71,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
